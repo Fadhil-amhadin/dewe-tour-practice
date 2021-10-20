@@ -2,10 +2,15 @@
   font-family: 'roboto';
   src:  url('./assets/fonts/roboto/Roboto-Light.ttf');
 }
+@font-face {
+  font-family: 'wedding';
+  src:  url('./assets/fonts/wedding/Wedding\ Bells\ -\ TTF.ttf');
+}
 
 body{
   margin: 0;
   padding: 0;
+  background: url('./assets/images/body-background.jpg');
 }
 /* body {
   margin: 0;

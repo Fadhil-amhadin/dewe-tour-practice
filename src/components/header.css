@@ -3,16 +3,19 @@ nav{
     background-size: cover;
     padding: 1em;
     font-family: 'roboto';
-    padding-bottom: 3em;
+    padding-bottom: 5em;
+    margin-bottom: -3em;
 }
 
 .nav-header{
     display: flex;
     justify-content: space-between;
+    text-shadow: #ffae00 2px 2px;
 }
 
 h1.logo{
-    font-family: sans-serif;
+    font-family: wedding;
+    font-size: 2.5em;
     margin: 0;
     color: black;
 }
@@ -22,7 +25,7 @@ h1.logo{
     margin: 5px;
     padding: 5px;
     background: transparent;
-    border: 1px solid black;
+    border: 1px solid grey;
     border-radius: 4px;
     text-decoration: none;
     font-size: 1em;
@@ -34,8 +37,8 @@ h1.logo{
     width: 7em;
     margin: 5px;
     padding: 5px;
-    background: #ff4500;
-    border: 1px solid black;
+    background: #ffae00;
+    border: 1px solid grey;
     border-radius: 4px;
     text-decoration: none;
     font-size: 1em;
@@ -45,9 +48,17 @@ h1.logo{
 
 .nav-title{
     color: black;
+    text-shadow: #ffae00 1px 1px;
+}
+.nav-title h1{
+    margin-bottom: 5px;
+    margin-top: 1em;
+    font-size: 2em;
 }
 .nav-title p{
     font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 1em;
 }
 
 .search-field{
@@ -58,7 +69,7 @@ h1.logo{
     width: 90vw;
     font-size: 1.3em;
     padding: 8px;
-    border: 1px solid black;
+    border: 1px solid grey;
     border-right: none;
     border-radius: 5px 0 0 5px;
 }
@@ -66,7 +77,27 @@ h1.logo{
     background-color: #ffae00;
     font-size: 1.2em;
     padding: 8px;
-    border: 1px solid black;
+    border: 1px solid grey;
     border-left: none;
     border-radius: 0 5px 5px 0;
+}
+
+.offer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.offer .card{
+    width: 14em;
+    background-color: white;
+    border: none;
+    border-radius: 6px;
+    box-shadow: #ffae00 1px 1px 2px;
+    font-family: roboto;
+}
+
+.offer .container{
+    width: 14em;
+    display: inline-block;
+    text-align: center;
 }

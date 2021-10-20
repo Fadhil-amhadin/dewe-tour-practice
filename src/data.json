@@ -1,0 +1,44 @@
+[
+    {
+        "id" : "1",
+        "name" : "Lady Liberty",
+        "price" : "2500000",
+        "country" : "USA",
+        "image" : "New York City.jpg"
+    },
+    {
+        "id" : "2",
+        "name" : "Niagara Falls",
+        "price" : "2450000",
+        "country" : "Canada",
+        "image" : "Niagara Falls Canada.jpg"
+    },
+    {
+        "id" : "3",
+        "name" : "Pyramid Giza",
+        "price" : "5500000",
+        "country" : "Egypt",
+        "image" : "Giza Egypt.jpg"
+    },
+    {
+        "id" : "4",
+        "name" : "Paradise Island",
+        "price" : "15000000",
+        "country" : "Maldives",
+        "image" : "maldives island.jpg"
+    },
+    {
+        "id" : "5",
+        "name" : "Qom Province",
+        "price" : "3250000",
+        "country" : "Iran",
+        "image" : "Qom Province Iran.jpg"
+    },
+    {
+        "id" : "6",
+        "name" : "Bromo Mountain",
+        "price" : "550000",
+        "country" : "Indonesia",
+        "image" : "landscape2.jpg"
+    }
+]
