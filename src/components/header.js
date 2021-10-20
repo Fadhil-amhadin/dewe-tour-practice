@@ -11,13 +11,12 @@ function Header (){
                 </div>
             </div>
             <div>
-                <div>
+                <div className="nav-title">
                     <h1>Explore</h1>
-                    <h1>your amazing city together</h1>
+                    <p>your amazing city together</p>
                 </div>
                 <div>
                     <form>
-                        <labeel>find great place to holiday</labeel>
                         <div className="search-field">
                             <input type="text"></input>
                             <button type="submit">search</button>

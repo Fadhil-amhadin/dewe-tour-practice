@@ -2,6 +2,8 @@ nav{
     background-image: url('../assets/images/landscape.jpg');
     background-size: cover;
     padding: 1em;
+    font-family: 'roboto';
+    padding-bottom: 3em;
 }
 
 .nav-header{
@@ -10,8 +12,9 @@ nav{
 }
 
 h1.logo{
+    font-family: sans-serif;
     margin: 0;
-    color: white;
+    color: black;
 }
 
 .btn-login{
@@ -19,11 +22,11 @@ h1.logo{
     margin: 5px;
     padding: 5px;
     background: transparent;
-    border: 2px solid white;
+    border: 1px solid black;
     border-radius: 4px;
     text-decoration: none;
     font-size: 1em;
-    color: white;
+    color: black;
     font-weight: bold;
 }
 
@@ -31,15 +34,39 @@ h1.logo{
     width: 7em;
     margin: 5px;
     padding: 5px;
-    background: transparent;
-    border: 2px solid white;
+    background: #ff4500;
+    border: 1px solid black;
     border-radius: 4px;
     text-decoration: none;
     font-size: 1em;
-    color: white;
+    color: black;
     font-weight: bold;
+}
+
+.nav-title{
+    color: black;
+}
+.nav-title p{
+    font-size: 1.5em;
 }
 
 .search-field{
     display: flex;
+    justify-content: center;
+}
+.search-field input{
+    width: 90vw;
+    font-size: 1.3em;
+    padding: 8px;
+    border: 1px solid black;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+}
+.search-field button{
+    background-color: #ffae00;
+    font-size: 1.2em;
+    padding: 8px;
+    border: 1px solid black;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
 }
