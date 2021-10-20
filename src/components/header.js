@@ -1,18 +1,27 @@
 import './header.css';
+import Login from './login';
+import { useState } from 'react';
+import Register from './register';
 import image1 from '../assets/images/best-price.png';
 import image2 from '../assets/images/traveller-love.png';
 import image3 from '../assets/images/best-agent.png';
 import image4 from '../assets/images/dedicated-support.png';
 
 function Header (){
+    const [login, setLogin] = useState(false);
+    const [regist, setRegist] = useState(false);
+
     return(
-        <>
+        <>  
+            {login && <Login setLogin={setLogin}/>}
+            {regist && <Register setRegist={setRegist}/>}
+
             <nav>
                 <div className="nav-header">
                     <h1 className="logo" >Dewe Tour</h1>
                     <div>
-                        <button className="btn-login">Login</button>
-                        <button className="btn-regist" >Register</button>
+                        <button className="btn-login" onClick={() => {setLogin(true)}} >Login</button>
+                        <button className="btn-regist" onClick={() => {setRegist(true)}} >Register</button>
                     </div>
                 </div>
                 <div>

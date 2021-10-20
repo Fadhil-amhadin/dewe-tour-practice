@@ -1,38 +1,157 @@
-/* .App {
+/* login styling ====================================================================*/
+.loginBackground{
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginContainer{
+  border-radius: 8px;
+  font-family: roboto;
+  width: 40%;
+  height: 60vh;
+  background: url('./assets/images/body-background-min.jpg');
+  background-repeat: round;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.exitBtn{
+  text-align: right;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.exitBtn button{
+  font-family: roboto;
+  color: black;
+  background: transparent;
+  border: none;
+  font-size: 1.5em;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loginTitle{
+  font-size: 1.2em;
+}
+.loginTitle h1{
+  margin-top: 0;
+}
+.loginBody{
+  display: flex;
+  justify-content: center;
+}
+.loginBody form{
+  width: 80%;
+}
+.loginEmail, .loginPassword{
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.loginEmail div, .loginPassword div{
+  display: block;
+  text-align: left;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.loginEmail input, .loginPassword input{
+  font-size: 1.3em;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.loginBody .loginSubmit{
+  font-size: 1.3em;
+  font-weight: bold;
+  background-color: #ffae00;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px;
+}
+.loginFooter button{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+/* regist styling ==========================================================*/
+.registBackground{
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.registContainer{
+  border-radius: 8px;
+  font-family: roboto;
+  width: 40%;
+  height: 80vh;
+  background: url('./assets/images/body-background-min.jpg');
+  background-repeat: round;
+  text-align: center;
+}
+.exitBtn{
+  text-align: right;
+}
+.exitBtn button{
+  font-family: roboto;
+  color: black;
+  background: transparent;
+  border: none;
+  font-size: 1.5em;
+}
+.registTitle{
+  font-size: 1.2em;
+}
+.registTitle h1{
+  margin-top: 0;
+}
+.registBody{
+  display: flex;
+  justify-content: center;
+}
+.registBody form{
+  width: 80%;
+}
+.registName, .registEmail, .registPassword, .registPhone{
+  display: flex;
+  flex-direction: column;
+}
+.registName div, .registEmail div, .registPassword div, .registPhone div{
+  display: block;
+  text-align: left;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.registName input, .registEmail input, .registPassword input, .registPhone input{
+  font-size: 1.3em;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 10px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.registBody .registSubmit{
+  font-size: 1.3em;
+  font-weight: bold;
+  background-color: #ffae00;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+.registFooter button{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
