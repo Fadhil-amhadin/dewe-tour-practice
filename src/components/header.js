@@ -16,7 +16,7 @@ function Header (){
             {login && <Login setLogin={setLogin}/>}
             {regist && <Register setRegist={setRegist}/>}
 
-            <nav>
+            <nav className="nav">
                 <div className="nav-header">
                     <h1 className="logo" >Dewe Tour</h1>
                     <div>
