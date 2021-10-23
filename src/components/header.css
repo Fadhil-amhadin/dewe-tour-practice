@@ -11,6 +11,7 @@
     display: flex;
     justify-content: space-between;
     text-shadow: #ffae00 2px 2px;
+    height: 51px;
 }
 
 h1.logo{

@@ -3,6 +3,7 @@
     background-size: cover;
     padding: 1em;
     font-family: 'roboto';
+    height: 50px;
 }
 .navbar-header{
     display: flex;

@@ -1,7 +1,10 @@
 import './front-content.css';
 import data from '../data.json';
+import {useHistory} from 'react-router-dom';
 
 function Content (){
+    const history = useHistory();
+
     const toRupiah = (num) => {
         return new Intl.NumberFormat("en-ID", { style: "currency", currency: "IDR", minimumFractionDigits: 0 }).format(num);
     }
@@ -11,8 +14,8 @@ function Content (){
             <div className="row">
                 {
                     data.map((dataElm) => {
-                        return(
-                        <div className="card" key={dataElm.id}>
+                        return(                      
+                        <div onClick={() => {history.push(`/detail/${dataElm.id}`)}} className="card" key={dataElm.id}>
                             <img src={require(`../assets/images/${dataElm.image}`).default} alt="Avatar" style={{width: '17em'}}/>
                             <div className="container">
                                 <h2><b>{dataElm.name}</b></h2>
@@ -21,7 +24,8 @@ function Content (){
                                     <p>{dataElm.country}</p>
                                 </div>
                             </div>
-                        </div>)
+                        </div>                      
+                        )
                     })
                 }
 

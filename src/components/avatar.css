@@ -1,0 +1,77 @@
+.userLoginAvatar{
+    width: 45px;  
+}
+.userLoginAvatar img:active{
+    transform: scale(1.2);
+}
+.userLoginAvatar .userAvatar{
+    object-fit: cover;
+    width: 45px;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-position: center;
+    transition: transform 50ms ease-in-out;
+}
+
+.userDropDown{
+    position: relative;
+    background-color: white;
+    width: 140px;
+    right: 0;
+    left: -220%;
+    border-radius: 5px;
+    padding: 5px;
+}
+.userDropDown span{
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+}
+.userDropDown img{
+    width: 40px;
+}
+.userDropDown p{
+    text-shadow: none;
+    font-weight: bolder;
+}
+
+
+
+.adminLoginAvatar{
+    width: 45px;  
+}
+.adminLoginAvatar img:active{
+    transform: scale(1.2);
+}
+.adminLoginAvatar .adminAvatar{
+    object-fit: cover;
+    width: 45px;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-position: center;
+    transition: transform 50ms ease-in-out;
+}
+
+.adminDropDown{
+    position: relative;
+    background-color: white;
+    width: 140px;
+    right: 0;
+    left: -220%;
+    border-radius: 5px;
+    padding: 5px;
+}
+.adminDropDown span{
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+}
+.adminDropDown img{
+    width: 40px;
+}
+.adminDropDown p{
+    text-shadow: none;
+    font-weight: bolder;
+}

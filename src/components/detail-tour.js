@@ -1,13 +1,15 @@
 import './detail-tour.css';
 import Navbar from './navbar';
 import data from '../data.json';
+import {useParams} from 'react-router-dom';
 
 function DetailTour (){
     const toRupiah = (num) => {
         return new Intl.NumberFormat("en-ID", { style: "currency", currency: "IDR", minimumFractionDigits: 0 }).format(num);
     }
-    const dataCont = data.filter(e => e.id === "4");
-    console.log(dataCont[0].id)
+    const params = useParams();
+    console.log(params);
+    const dataCont = data.filter(e => e.id === params.id);
 
     return(
         <>
