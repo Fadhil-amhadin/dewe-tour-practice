@@ -1,7 +1,7 @@
 import './header.css';
 import Login from './login';
-import { useState } from 'react';
 import Register from './register';
+import { useState } from 'react';
 import image1 from '../assets/images/best-price.png';
 import image2 from '../assets/images/traveller-love.png';
 import image3 from '../assets/images/best-agent.png';
@@ -9,10 +9,11 @@ import image4 from '../assets/images/dedicated-support.png';
 import {AdminIsLogin, UserIsLogin, UserNotLogin} from './avatar';
 
 function Header (){
-    const [isLogin] = useState(false);
-    const [isAdmin] = useState(false);
     const [login, setLogin] = useState(false);
     const [regist, setRegist] = useState(false);
+    const authValue = JSON.parse(localStorage.getItem('authValue'));
+    const {isLogin, isAdmin} = authValue;
+
 
     return(
         <>  
@@ -24,8 +25,6 @@ function Header (){
                     <h1 className="logo" >Dewe Tour</h1>
                     <div>
                         {isLogin && !isAdmin ? <UserIsLogin/> : isLogin && isAdmin ? <AdminIsLogin/> : <UserNotLogin/>}
-                        {/* <button className="btn-login" onClick={() => {setLogin(true)}} >Login</button>
-                        <button className="btn-regist" onClick={() => {setRegist(true)}} >Register</button> */}
                     </div>
                 </div>
                 <div>

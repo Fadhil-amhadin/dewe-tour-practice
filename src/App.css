@@ -93,7 +93,7 @@
   border-radius: 8px;
   font-family: roboto;
   width: 40%;
-  height: 80vh;
+  height: 90vh;
   background: url('./assets/images/body-background-min.jpg');
   background-repeat: round;
   text-align: center;
@@ -121,23 +121,26 @@
 .registBody form{
   width: 80%;
 }
-.registName, .registEmail, .registPassword, .registPhone{
+.registName, .registEmail, .registPassword, .registPhone, .registAddress{
   display: flex;
   flex-direction: column;
 }
-.registName div, .registEmail div, .registPassword div, .registPhone div{
+.registName div, .registEmail div, .registPassword div, .registPhone div, .registAddress div{
   display: block;
   text-align: left;
   font-size: 1.3em;
   font-weight: bold;
 }
-.registName input, .registEmail input, .registPassword input, .registPhone input{
+.registName input, .registEmail input, .registPassword input, .registPhone input, .registAddress textarea{
   font-size: 1.3em;
   border: 1px solid grey;
   border-radius: 5px;
   margin: 10px 0;
 }
-
+.registAddress textarea{
+  font-weight: bold;
+  font-family: inherit;
+}
 .registBody .registSubmit{
   font-size: 1.3em;
   font-weight: bold;

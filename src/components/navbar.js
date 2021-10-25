@@ -5,8 +5,8 @@ import Register from './register';
 import {AdminIsLogin, UserIsLogin, UserNotLogin} from './avatar';
 
 function Navbar () {
-    const [isLogin] = useState(false);
-    const [isAdmin] = useState(false);
+    const authValue = JSON.parse(localStorage.getItem('authValue'));
+    const {isLogin, isAdmin} = authValue;
     const [login, setLogin] = useState(false);
     const [regist, setRegist] = useState(false);
 

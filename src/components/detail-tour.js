@@ -1,18 +1,25 @@
 import './detail-tour.css';
 import Navbar from './navbar';
 import data from '../data.json';
-import {useParams} from 'react-router-dom';
+import Login from './login';
+import {useParams, useHistory} from 'react-router-dom';
+import {useState} from 'react';
 
 function DetailTour (){
+    const authValue = JSON.parse(localStorage.getItem('authValue'));
+    const [login, setLogin] = useState(false);
+    const {isLogin, isAdmin} = authValue;
+    const history = useHistory();
+
     const toRupiah = (num) => {
         return new Intl.NumberFormat("en-ID", { style: "currency", currency: "IDR", minimumFractionDigits: 0 }).format(num);
     }
     const params = useParams();
-    console.log(params);
     const dataCont = data.filter(e => e.id === params.id);
 
     return(
         <>
+            {login && <Login setLogin={setLogin}/>}
             <Navbar/>
             <div className="detail-tour">
                 <div className="content">
@@ -96,7 +103,13 @@ function DetailTour (){
                     </div>
                     <hr></hr>
                     <div className="booking-btn">
-                        <button>BOOK NOW</button>
+                        <button onClick={() => {
+                            if(isLogin === false){
+                                setLogin(true);
+                            }else{
+                                history.push(`/payment/${params.id}`);
+                            }
+                        }} >BOOK NOW</button>
                     </div>
                 </div>
             </div>

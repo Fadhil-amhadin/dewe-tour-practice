@@ -1,0 +1,18 @@
+.incoming-trip-title{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: roboto;
+}
+.incoming-trip-title button{
+    font-size: 1.2em;
+    background-color: #ffae00;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+    padding: 10px 20px;
+    margin-top: 20px;
+}

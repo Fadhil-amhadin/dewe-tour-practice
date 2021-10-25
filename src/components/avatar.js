@@ -1,12 +1,19 @@
 import './avatar.css';
 import Login from './login';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { useHistory } from 'react-router';
 import Register from './register';
+import { AuthContext } from '../contexts/authContext';
 
 const UserDropDown = () => {
+    const history = useHistory();
+    
+    const {dispatch} = useContext(AuthContext);
     return(
         <div className="userDropDown">
-            <span>
+            <span onClick={() => {
+                    history.push('/profile')
+                }}>
                 <div>
                     <img src={require(`../assets/images/avatar/profile.png`).default} alt="profile"></img>
                 </div>
@@ -19,7 +26,9 @@ const UserDropDown = () => {
                 <p>Pay</p>
             </span>
             <hr style={{color: "grey"}}></hr>
-            <span>
+            <span onClick={() => {dispatch({isLogin : false, isAdmin : false})
+                                    history.push('/');
+                                 }}>
                 <div>   
                     <img src={require(`../assets/images/avatar/logout.png`).default} alt="profile"></img>
                 </div>
@@ -30,16 +39,20 @@ const UserDropDown = () => {
 }
 
 const AdminDropDown = () => {
+    const history = useHistory();
+    const {dispatch} = useContext(AuthContext);
     return(
         <div className="adminDropDown">
-            <span>
+            <span onClick={() => history.push('/incoming-trip')}>
                 <div>
                     <img src={require(`../assets/images/avatar/trip.png`).default} alt="profile"></img>
                 </div>
                 <p>Trip</p>
             </span>
             <hr style={{color: "grey"}}></hr>
-            <span>
+            <span onClick={() => {dispatch({isLogin : false, isAdmin : false})
+                                    history.push('/');
+                                 }}>
                 <div>   
                     <img src={require(`../assets/images/avatar/logout.png`).default} alt="profile"></img>
                 </div>
