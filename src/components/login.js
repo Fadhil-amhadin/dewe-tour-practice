@@ -1,8 +1,10 @@
 import {useState} from 'react';
 import {useContext} from 'react';
+import {useHistory} from 'react-router';
 import {AuthContext} from '../contexts/authContext';
 
 function Login ({setLogin}){
+    const history = useHistory();
     const [messageLog, setMessageLog] = useState(false);
     const {dispatch} = useContext(AuthContext);
     return(
@@ -29,12 +31,14 @@ function Login ({setLogin}){
                          if(cont.length < 1)(setMessageLog(true))
                          else if(email === cont[0].email && password === cont[0].password && isAdmin === cont[0].isAdmin){
                              dispatch({isLogin : true, isAdmin : false})
+                             localStorage.setItem('currentUser', cont[0].email);
                              setLogin(false);
                              window.location.reload();
                          }else if(email === cont[0].email && password === cont[0].password && isAdmin !== cont[0].isAdmin){
                              dispatch({isLogin : true, isAdmin : true})
+                             localStorage.setItem('currentUser', cont[0].email);
                              setLogin(false);
-                             window.location.reload();
+                             history.push('/list-transaction');
                          }
                     }}>
                         <div className="loginEmail">

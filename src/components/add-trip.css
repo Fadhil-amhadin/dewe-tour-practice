@@ -35,7 +35,7 @@
     justify-content: center;
     margin-top: 2em;
 }
-.add-trip-container .add-child-button button{
+.add-trip-container .add-child-button .button-add{
     font-size: 1.3em;
     background-color: #ffae00;
     border: none;

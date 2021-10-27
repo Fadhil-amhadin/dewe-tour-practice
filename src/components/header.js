@@ -2,6 +2,7 @@ import './header.css';
 import Login from './login';
 import Register from './register';
 import { useState } from 'react';
+import icon from '../assets/images/figma/Icon.png';
 import image1 from '../assets/images/best-price.png';
 import image2 from '../assets/images/traveller-love.png';
 import image3 from '../assets/images/best-agent.png';
@@ -21,24 +22,27 @@ function Header (){
             {regist && <Register setRegist={setRegist}/>}
 
             <nav className="nav">
-                <div className="nav-header">
-                    <h1 className="logo" >Dewe Tour</h1>
-                    <div>
-                        {isLogin && !isAdmin ? <UserIsLogin/> : isLogin && isAdmin ? <AdminIsLogin/> : <UserNotLogin/>}
-                    </div>
-                </div>
-                <div>
-                    <div className="nav-title">
-                        <h1>Explore</h1>
-                        <p>your amazing city together</p>
+                <div className="transparent-layer">
+                    <div className="nav-header">
+                        <img src={icon} alt="dewe tour"></img>
+                        <div>
+                            {isLogin && !isAdmin ? <UserIsLogin/> : isLogin && isAdmin ? <AdminIsLogin/> : <UserNotLogin/>}
+                        </div>
                     </div>
                     <div>
-                        <form>
-                            <div className="search-field">
-                                <input type="text"></input>
-                                <button type="submit">search</button>
-                            </div>
-                        </form>
+                        <div className="nav-title">
+                            <h1>Explore</h1>
+                            <p>your amazing city together</p>
+                        </div>
+                        <div>
+                            <form>
+                                <p className="search-label">find great places for holiday</p>
+                                <div className="search-field">
+                                    <input type="text"></input>
+                                    <button type="submit">search</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </nav>

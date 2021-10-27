@@ -19,7 +19,7 @@ const UserDropDown = () => {
                 </div>
                 <p>Profile</p>
             </span>
-            <span>
+            <span onClick={() => history.push('/paydrop')}>
                 <div>
                     <img src={require(`../assets/images/avatar/pay.png`).default} alt="profile"></img>
                 </div>
@@ -28,6 +28,7 @@ const UserDropDown = () => {
             <hr style={{color: "grey"}}></hr>
             <span onClick={() => {dispatch({isLogin : false, isAdmin : false})
                                     history.push('/');
+                                    localStorage.removeItem('currentUser');
                                  }}>
                 <div>   
                     <img src={require(`../assets/images/avatar/logout.png`).default} alt="profile"></img>
@@ -52,6 +53,7 @@ const AdminDropDown = () => {
             <hr style={{color: "grey"}}></hr>
             <span onClick={() => {dispatch({isLogin : false, isAdmin : false})
                                     history.push('/');
+                                    localStorage.removeItem('currentUser');
                                  }}>
                 <div>   
                     <img src={require(`../assets/images/avatar/logout.png`).default} alt="profile"></img>

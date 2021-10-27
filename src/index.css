@@ -10,7 +10,8 @@
 body{
   margin: 0;
   padding: 0;
-  background: url('./assets/images/body-background.jpg');
+  /* background: url('./assets/images/body-background.jpg'); */
+  background-color: #F1F1F1;
 }
 /* body {
   margin: 0;

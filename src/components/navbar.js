@@ -2,6 +2,7 @@ import './navbar.css';
 import Login from './login';
 import { useState } from 'react';
 import Register from './register';
+import icon from '../assets/images/figma/Icon.png';
 import {AdminIsLogin, UserIsLogin, UserNotLogin} from './avatar';
 
 function Navbar () {
@@ -17,7 +18,7 @@ function Navbar () {
 
             <nav className="navbar">
                 <div className="navbar-header">
-                    <h1 className="navbar-logo" >Dewe Tour</h1>
+                    <img src={icon} alt="dewe tour"></img>
                     {isLogin && !isAdmin ? <UserIsLogin/> : isLogin && isAdmin ? <AdminIsLogin/> : <UserNotLogin/>}
                 </div>
             </nav>

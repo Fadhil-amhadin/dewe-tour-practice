@@ -1,9 +1,7 @@
 import icon from '../assets/images/figma/Icon.png';
 import Navbar from "./navbar"
-// import Payment from "./payment";
-import './profile.css';
 
-function Profile () {
+function Paydrop () {
     const dataUser = JSON.parse(localStorage.getItem('user'));
     const userCont = dataUser.filter(e => e.email === localStorage.getItem('currentUser'));
 
@@ -16,59 +14,6 @@ function Profile () {
     return (
         <>
             <Navbar/>
-            <div className="profile-container">
-                <div className="personal-info">
-                    <div className="info">
-                        <h1>Personal Info</h1>
-                    </div>
-                    <div  className="info">
-                        <span className="info-img">
-                            <img src={require(`../assets/images/profile/name.png`).default} alt="img"></img>
-                        </span>
-                        <span>
-                            <h6>{userCont[0].fullName}</h6>
-                            <p>Full Name</p>
-                        </span>
-                    </div>
-                    <div  className="info">
-                        <span className="info-img">
-                            <img src={require(`../assets/images/profile/email.png`).default} alt="img"></img>
-                        </span>
-                        <span>
-                            <h6>{userCont[0].email}</h6>
-                            <p>Email</p>
-                        </span>
-                    </div>
-                    <div  className="info">
-                        <span className="info-img">
-                            <img src={require(`../assets/images/profile/phone.png`).default} alt="img"></img>
-                        </span>
-                        <span>
-                            <h6>{userCont[0].phone}</h6>
-                            <p>Mobile Phone</p>
-                        </span>
-                    </div>
-                    <div className="info">
-                        <span className="info-img">
-                            <img src={require(`../assets/images/profile/address.png`).default} alt="img"></img>
-                        </span>
-                        <span>
-                            <h6>{userCont[0].address}</h6>
-                            <p>Address</p>
-                        </span>
-                    </div>
-                </div>
-                <div className="profile-photo">
-                    <img src={require(`../assets/images/avatar/Foto.jpg`).default} alt="img"></img>
-                    <div>
-                        <button>Change Photo Profile</button>
-                    </div>
-                </div>
-            </div>
-            {/* ===================================== Payment ===================================== */}
-            <div className="history-trip">
-                <h1>History Trip</h1>
-            </div>
             {transactionCont.map(e => {
                 const paymentStyle = `${e.trStatus}-payment`;
                 return (
@@ -158,4 +103,4 @@ function Profile () {
     )
 }
 
-export default Profile;
+export default Paydrop;

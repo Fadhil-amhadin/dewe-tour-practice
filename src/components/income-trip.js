@@ -22,7 +22,7 @@ function IncomeTrip (){
                     data.map((dataElm) => {
                         return(                      
                         <div onClick={() => {history.push(`/detail/${dataElm.id}`)}} className="card" key={dataElm.id}>
-                            <img src={require(`../assets/images/${dataElm.image}`).default} alt="Avatar" style={{width: '17em'}}/>
+                            <img src={require(`../assets/images/figma/${dataElm.image}`).default} alt="Avatar" style={{width: '22em'}}/>
                             <div className="container">
                                 <h2><b>{dataElm.name}</b></h2>
                                 <div>

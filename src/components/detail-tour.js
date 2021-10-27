@@ -1,12 +1,14 @@
 import './detail-tour.css';
-import Navbar from './navbar';
-import data from '../data.json';
 import Login from './login';
-import {useParams, useHistory} from 'react-router-dom';
+import Navbar from './navbar';
 import {useState} from 'react';
+// import data from '../data.json';
+import {useParams, useHistory} from 'react-router-dom';
+
 
 function DetailTour (){
     const authValue = JSON.parse(localStorage.getItem('authValue'));
+    const data = JSON.parse(localStorage.getItem('trip'));
     const [login, setLogin] = useState(false);
     const {isLogin, isAdmin} = authValue;
     const history = useHistory();
@@ -16,6 +18,9 @@ function DetailTour (){
     }
     const params = useParams();
     const dataCont = data.filter(e => e.id === params.id);
+    let price = dataCont[0].price;
+    let [totalPrice, setTotalPrice] = useState(price);
+    let [qty, setQty] = useState(1);
 
     return(
         <>
@@ -25,11 +30,11 @@ function DetailTour (){
                 <div className="content">
                     <h1 className="title">{dataCont[0].name}</h1>
                     <p>{dataCont[0].country}</p>
-                    <img className="main-img" src={require(`../assets/images/${dataCont[0].image}`).default} alt="tour"/>
+                    <img className="main-img" src={require(`../assets/images/figma/hd-${dataCont[0].image}`).default} alt="tour"/>
                     <div className="small-img">
-                        <img className="img-1" src={require(`../assets/images/${dataCont[0].image}`).default} alt="tour"/>
-                        <img className="img-2" src={require(`../assets/images/${dataCont[0].image}`).default} alt="tour"/>
-                        <img className="img-3" src={require(`../assets/images/${dataCont[0].image}`).default} alt="tour"/>
+                        <img className="img-1" src={require(`../assets/images/figma/detail/detail-1.jpg`).default} alt="tour"/>
+                        <img className="img-2" src={require(`../assets/images/figma/detail/detail-2.jpg`).default} alt="tour"/>
+                        <img className="img-3" src={require(`../assets/images/figma/detail/detail-3.jpg`).default} alt="tour"/>
                     </div>
                     <div>
                         <h2>Information Trip</h2>
@@ -40,7 +45,7 @@ function DetailTour (){
                                     <div>
                                     <img src={require(`../assets/images/detail-tour/accomodation.png`).default} alt="tour"/>
                                     </div>
-                                    <h3>Hotel 4 Nights</h3>
+                                    <h3>{dataCont[0].accomodation}</h3>
                                 </span>
                             </div>
                             <div>
@@ -49,7 +54,7 @@ function DetailTour (){
                                     <div>
                                     <img src={require(`../assets/images/detail-tour/transportation.png`).default} alt="tour"/>
                                     </div>
-                                    <h3>Qatar Airways</h3>
+                                    <h3>{dataCont[0].transportation}</h3>
                                 </span>
                             </div>
                             <div>
@@ -58,7 +63,7 @@ function DetailTour (){
                                     <div>
                                     <img src={require(`../assets/images/detail-tour/eat.png`).default} alt="tour"/>
                                     </div>
-                                    <h3>Included at Itinerary</h3>
+                                    <h3>{dataCont[0].eat}</h3>
                                 </span>
                             </div>
                             <div>
@@ -67,7 +72,7 @@ function DetailTour (){
                                     <div>
                                     <img src={require(`../assets/images/detail-tour/duration.png`).default} alt="tour"/>
                                     </div>
-                                    <h3>6 Days 4 Nights</h3>
+                                    <h3>{dataCont[0].duration[0]} Days {dataCont[0].duration[1]} Nights</h3>
                                 </span>
                             </div>
                             <div>
@@ -76,7 +81,7 @@ function DetailTour (){
                                     <div>
                                     <img src={require(`../assets/images/detail-tour/date.png`).default} alt="tour"/>
                                     </div>
-                                    <h3>26 Agustus 2020</h3>
+                                    <h3>{dataCont[0].date}</h3>
                                 </span>
                             </div>
                         </div>
@@ -91,15 +96,21 @@ function DetailTour (){
                             <p>/ Person</p>
                         </span>
                         <span>
-                            <button>+</button>
-                            <p className="quantity">1</p>
-                            <button>-</button>
+                            <button onClick={() => {
+                                setQty(qty += 1);
+                                setTotalPrice(price * qty);
+                            }}>+</button>
+                            <p className="quantity">{qty}</p>
+                            <button onClick={() => {
+                                if(qty > 1) setQty(qty -= 1);
+                                setTotalPrice(price * qty)
+                            }}>-</button>
                         </span>
                     </div>
                     <hr></hr>
                     <div className="total-price">
                         <p>Total:</p>
-                        <p className="nominal">{toRupiah(dataCont[0].price)}</p>
+                        <p className="nominal">{toRupiah(totalPrice)}</p>
                     </div>
                     <hr></hr>
                     <div className="booking-btn">
@@ -107,7 +118,7 @@ function DetailTour (){
                             if(isLogin === false){
                                 setLogin(true);
                             }else{
-                                history.push(`/payment/${params.id}`);
+                                history.push(`/payment/${params.id}/${JSON.stringify({"qty" : qty, "totalPrice" :totalPrice})}`);
                             }
                         }} >BOOK NOW</button>
                     </div>

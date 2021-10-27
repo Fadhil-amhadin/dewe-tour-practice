@@ -1,5 +1,5 @@
 .navbar{
-    background-image: url('../assets/images/landscape-navbar.jpg');
+    background-image: url('../assets/images/figma/min-header.png');
     background-size: cover;
     padding: 1em;
     font-family: 'roboto';
@@ -10,10 +10,12 @@
     justify-content: space-between;
     text-shadow: #ffae00 2px 2px;
 }
-
-h1.navbar-logo{
+.navbar-header img{
+    max-height: 68px;
+}
+/* h1.navbar-logo{
     font-family: wedding;
     font-size: 2.5em;
     margin: 0;
     color: black;
-}
+} */

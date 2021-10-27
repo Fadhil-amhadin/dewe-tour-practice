@@ -69,10 +69,22 @@
     margin-top: 2em;
     margin-bottom: 0;
 }
+.approved-payment-div{
+    display: flex;
+    justify-content: left;
+}
 .approved-payment{
-    margin-top: 2em !important;
+    margin-top: 1em !important;
     color: rgb(3, 158, 3) !important;
     background-color:  #d1ffae;
+    border-radius: 4px;
+    padding: 3px;
+    font-weight: bold;
+}
+.cancel-payment{
+    margin-top: 1em !important;
+    color: rgb(233, 69, 69) !important;
+    background-color:  rgb(255, 217, 223);
     border-radius: 4px;
     padding: 3px;
     font-weight: bold;

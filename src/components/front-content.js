@@ -1,9 +1,11 @@
 import './front-content.css';
-import data from '../data.json';
+// import data from '../data.json';
 import {useHistory} from 'react-router-dom';
 
 function Content (){
     const history = useHistory();
+
+    const data = JSON.parse(localStorage.getItem('trip'));
 
     const toRupiah = (num) => {
         return new Intl.NumberFormat("en-ID", { style: "currency", currency: "IDR", minimumFractionDigits: 0 }).format(num);
@@ -11,12 +13,13 @@ function Content (){
     return(
         <div className="content">
             <h1 style={{textAlign: 'center'}}>Group Tour</h1>
+            {/* <button onClick={() => {localStorage.setItem('trip', JSON.stringify(data))}}>add json</button> */}
             <div className="row">
                 {
                     data.map((dataElm) => {
                         return(                      
                         <div onClick={() => {history.push(`/detail/${dataElm.id}`)}} className="card" key={dataElm.id}>
-                            <img src={require(`../assets/images/${dataElm.image}`).default} alt="Avatar" style={{width: '17em'}}/>
+                            <img src={require(`../assets/images/figma/${dataElm.image}`).default} alt="Avatar" style={{width: '22em'}}/>
                             <div className="container">
                                 <h2><b>{dataElm.name}</b></h2>
                                 <div>

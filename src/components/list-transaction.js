@@ -4,6 +4,8 @@ import { useHistory } from 'react-router';
 
 function ListTransaction () {
     const history = useHistory();
+    const dataTransaction = JSON.parse(localStorage.getItem('list-transaction'));
+    let no = 0;
     return(
         <>
             <Navbar/>
@@ -22,54 +24,21 @@ function ListTransaction () {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Fadhil</td>
-                                <td>Pyramid Giza Egypt</td>
-                                <td>bri.png</td>
-                                <td><p className="approved-admin">Approved</p></td>
-                                <td onClick={() => history.push('/admin-approve')}><img src={require(`../assets/images/mag-glasses.png`).default} alt="img" style={{width : "40px"}}></img></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Dhio</td>
-                                <td>Lady Liberty USA</td>
-                                <td>bni.png</td>
-                                <td><p className="pending-admin">Pending</p></td>
-                                <td onClick={() => history.push('/admin-approve')}><img src={require(`../assets/images/mag-glasses.png`).default} alt="img" style={{width : "40px"}}></img></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Farnidah</td>
-                                <td>Qom Province Iran</td>
-                                <td>bca.png</td>
-                                <td><p className="cancel-admin">Cancel</p></td>
-                                <td onClick={() => history.push('/admin-approve')}><img src={require(`../assets/images/mag-glasses.png`).default} alt="img" style={{width : "40px"}}></img></td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Nurul Mawaddah</td>
-                                <td>Niagara Falls Canada</td>
-                                <td>mandiri.png</td>
-                                <td><p className="approved-admin">Approved</p></td>
-                                <td onClick={() => history.push('/admin-approve')}><img src={require(`../assets/images/mag-glasses.png`).default} alt="img" style={{width : "40px"}}></img></td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Alwin</td>
-                                <td>Bromo Mountain Indonesia</td>
-                                <td>bri.png</td>
-                                <td><p className="pending-admin">Pending</p></td>
-                                <td onClick={() => history.push('/admin-approve')}><img src={require(`../assets/images/mag-glasses.png`).default} alt="img" style={{width : "36px"}}></img></td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Harfendi</td>
-                                <td>Pyramid Giza Egypt</td>
-                                <td>bri.png</td>
-                                <td><p className="approved-admin">Approved</p></td>
-                                <td onClick={() => history.push('/admin-approve')}><img src={require(`../assets/images/mag-glasses.png`).default} alt="img" style={{width : "40px"}}></img></td>
-                            </tr>
+                            {dataTransaction.map(e => {
+                                const statuStyling = `${e.trStatus}-admin`;
+                                no++;
+                                
+                                return(
+                                    <tr>
+                                        <td>{no}</td>
+                                        <td>{e.trName}</td>
+                                        <td>{e.trNameTrip}</td>
+                                        <td>{e.trProof}</td>
+                                        <td><p className={statuStyling}>{e.trStatus}</p></td>
+                                        <td onClick={() => history.push(`/admin-approve/${e.trEmail}`)}><img src={require(`../assets/images/mag-glasses.png`).default} alt="img" style={{width : "40px"}}></img></td>
+                                    </tr>
+                                )
+                            })}
                         </tbody>
                     </table>
                 </div>
